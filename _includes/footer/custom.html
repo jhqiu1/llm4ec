@@ -1,0 +1,14 @@
+<!-- start custom footer snippets -->
+<script>
+(function() {
+  var links = document.querySelectorAll('.page__content a[href^="http"]');
+  for (var i = 0; i < links.length; i++) {
+    var href = links[i].getAttribute('href');
+    if (href && href.indexOf(window.location.hostname) === -1) {
+      links[i].setAttribute('target', '_blank');
+      links[i].setAttribute('rel', 'noopener');
+    }
+  }
+})();
+</script>
+<!-- end custom footer snippets -->

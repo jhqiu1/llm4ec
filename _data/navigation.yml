@@ -1,0 +1,18 @@
+# main links in the site header
+main:
+  - title: "Home"
+    url: /
+  - title: "Events"
+    url: /events/
+  - title: "History"
+    url: /history/
+  - title: "References"
+    url: /references/
+  - title: "Resources"
+    url: /resources/
+  - title: "Researchers"
+    url: /researchers/
+  - title: "Related"
+    url: /related/
+  - title: "Search"
+    url: /search/

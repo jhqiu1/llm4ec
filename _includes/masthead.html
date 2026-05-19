@@ -1,0 +1,40 @@
+{% include base_path %}
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__brand">
+      <a href="{{ base_path }}/" class="masthead__logo">LLM4AAD</a>
+    </div>
+    <button class="masthead__toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="masthead__nav">
+      {% for link in site.data.navigation.main %}
+        {% if link.url contains 'http' %}
+          {% assign domain = '' %}
+        {% else %}
+          {% assign domain = base_path %}
+        {% endif %}
+        {% if link.url contains '/search/' %}
+          <a class="masthead__nav-item masthead__search-btn" href="{{ domain }}{{ link.url }}" aria-label="Search">
+            <i class="fas fa-search"></i>
+            <span class="masthead__search-label">Search</span>
+          </a>
+        {% else %}
+          <a class="masthead__nav-item" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</div>
+
+<script>
+(function() {
+  var navToggle = document.getElementById('nav-toggle');
+  var siteNav = document.getElementById('site-nav');
+  navToggle.addEventListener('click', function() {
+    this.classList.toggle('is-active');
+    siteNav.classList.toggle('is-open');
+  });
+})();
+</script>
